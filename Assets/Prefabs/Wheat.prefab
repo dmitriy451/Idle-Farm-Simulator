@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db26f6fe1f241349824f7209d48bb95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeForGrowth: 10
+  _timeForGrowth: 2
   _spikeletsOfWheat: {fileID: 8378981158031011120}
   _particlePosition: {fileID: 3523577590051522658}
   _blockOfWheatPrefab: {fileID: 6625960079078672438, guid: e5e42602a05c79240a371933eb61212e, type: 3}
