@@ -13,6 +13,15 @@ public class GardenBed : MonoBehaviour
     {
         Plant();
     }
+
+    private void Update()
+    {
+
+        if (_plantedWheat == null)
+        {
+            Plant();
+        }
+    }
     private void Plant()
     {
         _plantedWheat = Instantiate(_wheatPrefab, _plantPosition.position, Quaternion.identity, transform);

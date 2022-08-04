@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1866397379005398424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8378981158031011120}
+  m_Layer: 6
+  m_Name: Spikelets of wheat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8378981158031011120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866397379005398424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.1, z: 0.2}
+  m_Children:
+  - {fileID: 5430166322568271051}
+  - {fileID: 3898400322531794778}
+  - {fileID: 5013086760743056802}
+  - {fileID: 5411199425185987469}
+  - {fileID: 3523577590051522658}
+  m_Father: {fileID: 3269371065730532826}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5673863982910697453
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +46,7 @@ GameObject:
   - component: {fileID: 3269371065730532826}
   - component: {fileID: 3546873728444284432}
   - component: {fileID: 2373322463565736456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,12 +62,9 @@ Transform:
   m_GameObject: {fileID: 5673863982910697453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0, z: 0.5}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1.5, y: 2, z: 1.5}
   m_Children:
-  - {fileID: 5430166322568271051}
-  - {fileID: 3898400322531794778}
-  - {fileID: 5013086760743056802}
-  - {fileID: 5411199425185987469}
+  - {fileID: 8378981158031011120}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,7 +80,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db26f6fe1f241349824f7209d48bb95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeForGrowth: 0
+  _timeForGrowth: 10
+  _spikeletsOfWheat: {fileID: 8378981158031011120}
+  _particlePosition: {fileID: 3523577590051522658}
+  _blockOfWheatPrefab: {fileID: 6625960079078672438, guid: e5e42602a05c79240a371933eb61212e, type: 3}
+  _flindersParticles: {fileID: 1492319386045331960, guid: e178ca0e9f5260e49af0000ac0571687, type: 3}
 --- !u!65 &2373322463565736456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62,16 +98,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6419062, y: 1.0954921, z: 0.59416056}
   m_Center: {x: 0.000000037252903, y: 0.45358574, z: -0.011936426}
+--- !u!1 &5830875326087097097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3523577590051522658}
+  m_Layer: 6
+  m_Name: Particle Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3523577590051522658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5830875326087097097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.869, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8378981158031011120}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3898400322531365266
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3269371065730532826}
+    m_TransformParent: {fileID: 8378981158031011120}
     m_Modifications:
     - target: {fileID: 114378, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
       propertyPath: m_Name
       value: Grass3D_10 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114378, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 429768, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
       propertyPath: m_RootOrder
@@ -141,11 +211,15 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3269371065730532826}
+    m_TransformParent: {fileID: 8378981158031011120}
     m_Modifications:
     - target: {fileID: 114378, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
       propertyPath: m_Name
       value: Grass3D_10 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114378, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 429768, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
       propertyPath: m_RootOrder
@@ -215,11 +289,15 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3269371065730532826}
+    m_TransformParent: {fileID: 8378981158031011120}
     m_Modifications:
     - target: {fileID: 114378, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
       propertyPath: m_Name
       value: Grass3D_10 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114378, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 429768, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
       propertyPath: m_RootOrder
@@ -289,11 +367,15 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3269371065730532826}
+    m_TransformParent: {fileID: 8378981158031011120}
     m_Modifications:
     - target: {fileID: 114378, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
       propertyPath: m_Name
       value: Grass3D_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114378, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 429768, guid: 35047f5db11d8804f941830d7855dcf9, type: 3}
       propertyPath: m_RootOrder
